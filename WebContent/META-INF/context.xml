@@ -6,7 +6,7 @@
 			name="jdbc/MySQL"
 			type="javax.sql.DataSource"
 			url="jdbc:mysql://localhost/"
-			username=""
+			username="root"
 			password=""
 	/>
 </Context>
