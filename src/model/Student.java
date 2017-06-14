@@ -8,6 +8,9 @@ public class Student implements Serializable {
 	private String stu_name;
 	private String stu_password;
 	private String clas;
+
+	public Student(){}
+
 	public int getStu_id() {
 		return stu_id;
 	}

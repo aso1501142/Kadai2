@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,16 +8,19 @@
 </head>
 <body>
 
+<form method="post" action="">
 
-	<input type="submit" value="ログアウト" />
+<h1>登録科目確認</h1>
 
-	<form method="post" action="">
+<p>
+科目ID:<c:out value="" />
+科目名:<c:out value="" />
+科目分類名:<c:out value="" />
 
-		<button name="action" value="zemi">ゼミ科目登録</button>
-		<button name="action" value="change">変更・削除</button>
-		<button name="action" value="entry">申込状況</button>
 
-	</form>
+</form>
+
+
 
 </body>
 </html>
