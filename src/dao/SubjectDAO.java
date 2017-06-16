@@ -67,7 +67,7 @@ public class SubjectDAO {
 		}
 		return subject;
 	}
-	public ArrayList<Subject> getSubjectdata(int subId, String subName, String subGroup){
+	public ArrayList<Subject> getSubjectdata(){
 
 		ArrayList<Subject> subjects = new ArrayList<Subject>();
 
@@ -76,14 +76,8 @@ public class SubjectDAO {
 			connection();
 			//注文番号、注文日、合計金額、合計ポイントの取得
 			String sql = "SELECT * "
-					+ "FROM  subject s"
-					+ "WHERE  = s.sub_id=?, s.sub_name=?, s.sub_group=?";
+					+ "FROM  subject s";
 			stmt = con.prepareStatement(sql);
-
-
-			stmt.setInt(1, subId);
-			stmt.setString(2, subName);
-			stmt.setString(3, subGroup);
 
 			rs = stmt.executeQuery();
 
