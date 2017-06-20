@@ -4,34 +4,44 @@ import java.io.Serializable;
 
 public class Subject implements Serializable{
 
-	private int subId;
-	private String subName;
-	private String subGroup;
+	private int sub_id;
+	private String sub_name;
+	private String sub_group;
+	private int tea_id;
 
 	public Subject(){}
 
-	public int getSubId() {
-		return subId;
+	public int getSub_id() {
+		return sub_id;
 	}
 
-	public void setSubId(int subId) {
-		this.subId = subId;
+	public void setSub_id(int sub_id) {
+		this.sub_id = sub_id;
 	}
 
-	public String getSubName() {
-		return subName;
+	public String getSub_name() {
+		return sub_name;
 	}
 
-	public void setSubName(String subName) {
-		this.subName = subName;
+	public void setSub_name(String sub_name) {
+		this.sub_name = sub_name;
 	}
 
-	public String getSubGroup() {
-		return subGroup;
+	public String getSub_group() {
+		return sub_group;
 	}
 
-	public void setSubGroup(String subGroup) {
-		this.subGroup = subGroup;
+	public void setSub_group(String sub_group) {
+		this.sub_group = sub_group;
 	}
+
+	public int getTea_id() {
+		return tea_id;
+	}
+
+	public void setTea_id(int tea_id) {
+		this.tea_id = tea_id;
+	}
+
 
 }

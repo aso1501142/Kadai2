@@ -3,6 +3,7 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
@@ -19,8 +20,10 @@ public class SubjectDAO {
 	public Connection connection() throws Exception{
 
 		if(ds == null){
-			ds = (DataSource)(new InitialContext()).lookup("java:comp/enc/jsbc/MySQL");
+			ds = (DataSource)(new InitialContext()).lookup("java:comp/env/jdbc/MySQL");
 		}
+		con = (Connection) ds.getConnection();
+
 		return con;
 
 	}
@@ -51,9 +54,9 @@ public class SubjectDAO {
 			stmt.setString(3, subGroup);
 
 			rs.next();
-			subject.setSubId(subId);
-			subject.setSubName(subName);
-			subject.setSubGroup(subGroup);
+			subject.setSub_id(subId);
+			subject.setSub_name(subName);
+			subject.setSub_group(subGroup);
 
 		}catch(Exception e){
 			subject = null;
@@ -65,6 +68,51 @@ public class SubjectDAO {
 			}
 		}
 		return subject;
+	}
+	public ArrayList<Subject> getSubjectdata(){
+
+		ArrayList<Subject> subjects = new ArrayList<Subject>();
+
+		try{
+			//DB接続
+
+			connection();
+
+			System.out.println("con");
+
+
+			String sql = "SELECT * "
+					+ "FROM  subject";
+			stmt = con.prepareStatement(sql);
+
+			rs = stmt.executeQuery();
+
+
+			while (rs.next()) {
+
+			Subject subject = new Subject();
+
+			subject.setSub_id(rs.getInt("sub_id"));
+			subject.setSub_name(rs.getString("sub_name"));
+			subject.setSub_group(rs.getString("sub_group"));
+			subject.setTea_id(rs.getInt("tea_id"));
+
+			System.out.println(rs.getInt("sub_id"));
+
+			subjects.add(subject);
+			}
+
+		}catch(Exception e){
+
+			}finally{
+				try{
+					close();
+				}catch (Exception e){
+
+				}
+		}
+		return subjects;
+
 	}
 
 }
