@@ -20,7 +20,7 @@ public class SubjectDAO {
 	public Connection connection() throws Exception{
 
 		if(ds == null){
-			ds = (DataSource)(new InitialContext()).lookup("java:comp/enc/jsbc/MySQL");
+			ds = (DataSource)(new InitialContext()).lookup("java:comp/env/jdbc/MySQL");
 		}
 		return con;
 
@@ -30,6 +30,7 @@ public class SubjectDAO {
 
 		if(rs != null){
 			rs.close();
+
 		}
 		if(stmt != null){
 			stmt.close();
@@ -38,6 +39,8 @@ public class SubjectDAO {
 			con.close();
 		}
 	}
+
+
 
 	public Subject getSubject(int subId,String subName,String subGroup){
 
@@ -99,6 +102,32 @@ public class SubjectDAO {
 				}
 		}
 		return subjects;
+
+	}
+	public Subject getSubject(int subId){
+
+		Subject subject = new Subject();
+
+		try{
+			connection();
+			String sql = "SELECT sub_id FROM zemi WHERE sub_id = ? ";
+			stmt = con.prepareStatement(sql);
+			stmt.setInt(1, subId);
+			rs.next();
+			subject.setSubId(subId);
+
+
+		}catch(Exception e){
+			subject = null;
+		}finally{
+			try{
+				close();
+			}catch(Exception e){
+
+			}
+		}
+		return subject;
+
 
 	}
 

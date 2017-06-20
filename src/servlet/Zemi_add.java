@@ -20,20 +20,25 @@ public class Zemi_add extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		// response.getWriter().append("Served at:
+		// ").append(request.getContextPath());
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//doGet(request, response);
-		try{
+		// doGet(request, response);
+		try {
 
 			String path = null;
 
@@ -41,22 +46,25 @@ public class Zemi_add extends HttpServlet {
 			String subName = request.getParameter("zemiName");
 			String subGroup = request.getParameter("zemiGroup");
 
-			SubjectDAO subjectDAO= new SubjectDAO();
+			SubjectDAO subjectDAO = new SubjectDAO();
 			Subject subject = new Subject();
 
-			subject = subjectDAO.getSubject(subId, subName, subGroup);
+			subject = subjectDAO.getSubject(subId);
 
-			if (subject != null){
-				path = "WEB-INf/jsp/zemi_add_conf.jsp";
-			}else{
-				path = "";
+			if (subject != null) {
+				request.setAttribute("errorMess", "すでに使われているIDです。");
+				path = "WEB-INf/jsp/zemi_add.jsp";
+			} else {
+				request.setAttribute("zemiId", subId);
+				request.setAttribute("zemiName", subName);
+				request.setAttribute("zemiGroup", subGroup);
+				path = "WEB-INF/jsp/zemi_add_conf.jsp";
 			}
 
-			RequestDispatcher rd =request.getRequestDispatcher(path);
+			RequestDispatcher rd = request.getRequestDispatcher(path);
 			rd.forward(request, response);
 
-
-		}catch(Exception e){
+		} catch (Exception e) {
 
 		}
 	}

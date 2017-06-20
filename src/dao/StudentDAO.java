@@ -19,7 +19,7 @@ public class StudentDAO {
 	public Connection connection() throws Exception {
 
 		if (ds == null) {
-			ds = (DataSource) (new InitialContext()).lookup("java:comp/enc/jsbc/MySQL");
+			ds = (DataSource)(new InitialContext()).lookup("java:comp/env/jdbc/MySQL");
 		}
 		return con;
 
@@ -37,6 +37,8 @@ public class StudentDAO {
 			con.close();
 		}
 	}
+
+
 
 	public Student getStudent(int stu_id, String password) {
 

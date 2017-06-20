@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,10 +13,10 @@ import dao.SubjectDAO;
 import model.Subject;
 
 /**
- * Servlet implementation class Zemi_change
+ * Servlet implementation class Zemi_add_conf
  */
-@WebServlet("/Zemi_change")
-public class Zemi_change extends HttpServlet {
+@WebServlet("/Zemi_add_conf")
+public class Zemi_add_conf extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -33,18 +32,33 @@ public class Zemi_change extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		//doGet(request, response);
 
-		SubjectDAO subjectDAO = new SubjectDAO();
+		try{
+			String path = null;
 
-		ArrayList<Subject> subjects = new ArrayList<Subject>();
+			int subId = Integer.parseInt(request.getParameter("zemiId"));
+			String subName = request.getParameter("zemiName");
+			String subGroup = request.getParameter("zemiGroup");
 
-		//subjects = subjectDAO.getSubjectdata(0, null, null);
+			SubjectDAO subjectDAO = new SubjectDAO();
+			Subject subject = new Subject();
 
-		request.setAttribute("subjects", subjects);
+			subject = subjectDAO.getSubject(subId, subName, subGroup);
 
-		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/jsp/zemi_change.jsp");
-		rd.forward(request, response);
+			if(subject != null){
+				path = "WEB-INF/jsp/top.jsp";
+			}else{
+				path="";
+			}
+
+			RequestDispatcher rd = request.getRequestDispatcher(path);
+			rd.forward(request, response);
+
+		}catch(Exception e){
+
+		}
+
 
 	}
 

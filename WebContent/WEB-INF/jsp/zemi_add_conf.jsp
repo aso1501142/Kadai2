@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,17 +9,23 @@
 </head>
 <body>
 
-<form method="post" action="">
+	<form method="post" action="">
 
-<h1>登録科目確認</h1>
+		<h1>登録科目確認</h1>
 
-<p>
-科目ID:<c:out value="" />
-科目名:<c:out value="" />
-科目分類名:<c:out value="" />
+		<p>
+			科目ID:
+			<c: <%request.getAttribute("zemiId");%> />
+			科目名:
+			<c: <%request.getAttribute("zemiName");%> />
+			科目分類名:
+			<c: <%request.getAttribute("zemiGroup");%> />
 
-
-</form>
+			<a href="zemi_add.jsp" tabindex="-1">
+			<input name="back" type="button"value="戻る">
+			</a>
+			<input type="submit" value="登録"/>
+	</form>
 
 
 
