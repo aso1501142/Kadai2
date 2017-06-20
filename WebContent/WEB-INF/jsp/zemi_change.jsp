@@ -10,9 +10,16 @@
 </head>
 <body>
 	<h1>科目変更・削除</h1>
-	<%
-	ArrayList<String> subject = new ArrayList<String>();
-	subject=(ArrayList)request.getAttribute("subject");
-	System.out.println(subject);%>
+
+<table border="1">
+	<c:forEach var="subject" items="${subjects}">
+		<tr>
+		    <td><c:out value="${subject.sub_id}"></c:out></td>
+			<td><c:out value="${subject.sub_name}"></c:out></td>
+			<td><c:out value="${subject.sub_group}"></c:out></td>
+			<td><c:out value="${subject.tea_id}"></c:out></td>
+		</tr>
+	</c:forEach>
+</table>
 </body>
 </html>
