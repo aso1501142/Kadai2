@@ -117,7 +117,9 @@ public class SubjectDAO {
 		return subjects;
 
 	}
-	public Subject getSubject(int subId){
+
+
+	public Subject getSubject(int sub_Id){
 
 		Subject subject = new Subject();
 
@@ -125,9 +127,10 @@ public class SubjectDAO {
 			connection();
 			String sql = "SELECT sub_id FROM zemi WHERE sub_id = ? ";
 			stmt = con.prepareStatement(sql);
-			stmt.setInt(1, subId);
+			stmt.setInt(1, sub_Id);
 			rs.next();
-			subject.setSubId(subId);
+
+			subject.setSub_id(sub_Id);
 
 
 		}catch(Exception e){
