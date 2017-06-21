@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.SubjectDAO;
 import model.Subject;
@@ -38,9 +39,12 @@ public class Zemi_add extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		// doGet(request, response);
+
+		String path = null;
+
 		try {
 
-			String path = null;
+			HttpSession session = request.getSession(true);
 
 			int subId = Integer.parseInt(request.getParameter("zemiId"));
 			String subName = request.getParameter("zemiName");
@@ -54,10 +58,11 @@ public class Zemi_add extends HttpServlet {
 			if (subject != null) {
 				request.setAttribute("errorMess", "すでに使われているIDです。");
 				path = "WEB-INf/jsp/zemi_add.jsp";
+				session.invalidate();
 			} else {
-				request.setAttribute("zemiId", subId);
-				request.setAttribute("zemiName", subName);
-				request.setAttribute("zemiGroup", subGroup);
+				session.setAttribute("zemiId", subId);
+				session.setAttribute("zemiName", subName);
+				session.setAttribute("zemiGroup", subGroup);
 				path = "WEB-INF/jsp/zemi_add_conf.jsp";
 			}
 

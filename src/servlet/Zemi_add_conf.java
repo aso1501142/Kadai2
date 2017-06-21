@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.SubjectDAO;
 import model.Subject;
@@ -34,12 +35,15 @@ public class Zemi_add_conf extends HttpServlet {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 
-		try{
-			String path = null;
+		String path = null;
 
-			int subId = Integer.parseInt(request.getParameter("zemiId"));
-			String subName = request.getParameter("zemiName");
-			String subGroup = request.getParameter("zemiGroup");
+		try{
+
+			HttpSession session = request.getSession(false);
+
+			int subId = Integer.parseInt((String)session.getAttribute("zemiId"));
+			String subName = (String)session.getAttribute("zemiName");
+			String subGroup = (String)session.getAttribute("zemiGroup");
 
 			SubjectDAO subjectDAO = new SubjectDAO();
 			Subject subject = new Subject();
@@ -49,14 +53,18 @@ public class Zemi_add_conf extends HttpServlet {
 			if(subject != null){
 				path = "WEB-INF/jsp/top.jsp";
 			}else{
-				path="";
+				path="WEB-INF/jsp/zemi_add_conf.jsp";
+				System.out.println("エラーが発生しています。");
 			}
 
 			RequestDispatcher rd = request.getRequestDispatcher(path);
 			rd.forward(request, response);
 
-		}catch(Exception e){
+			session.invalidate();
 
+		}catch(Exception e){
+			path="WEB-INF/jsp/zemi_add_conf.jsp";
+			System.out.println("例外エラーが発生しています。");
 		}
 
 

@@ -33,7 +33,7 @@ public class Zemi_change extends HttpServlet {
 
 		ArrayList<Subject> subjects = new ArrayList<Subject>();
 
-		//subjects = subjectDAO.getSubjectdata(0, null, null);
+		//subjects = subjectDAO.getSubjectdata();
 
 		request.setAttribute("subjects", subjects);
 
