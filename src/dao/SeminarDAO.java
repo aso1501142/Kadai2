@@ -19,12 +19,11 @@ public class SeminarDAO {
 	public Connection connection() throws Exception {
 
 		if (ds == null) {
-			ds = (DataSource) (new InitialContext()).lookup("java:comp/enc/jsbc/MySQL");
+			ds = (DataSource) (new InitialContext()).lookup("java:comp/env/jsbc/MySQL");
 		}
 		return con;
 
 	}
-
 	public void close() throws Exception {
 
 		if (rs != null) {
@@ -37,13 +36,11 @@ public class SeminarDAO {
 			con.close();
 		}
 	}
-
 	public Seminar getSeminar(int stu_id,int sub_id){
 
 		Seminar seminar = new Seminar();
 
 		try{
-
 			connection();
 			String sql = "";
 			stmt = con.prepareStatement(sql);
@@ -54,18 +51,14 @@ public class SeminarDAO {
 			seminar.setStu_id(stu_id);
 			seminar.setSub_id(sub_id);
 
-
 		}catch(Exception e){
 			seminar = null;
 		}finally{
 			try{
 				close();
 			}catch(Exception e){
-		}
-
-		}
+			}
+			}
 		return seminar;
 	}
-
-
 }

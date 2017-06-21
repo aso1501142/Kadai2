@@ -19,7 +19,7 @@ public class TeacherDAO {
 	public Connection connection() throws Exception{
 
 		if(ds == null){
-			ds = (DataSource)(new InitialContext()).lookup("java:comp/enc/jsbc/MySQL");
+			ds = (DataSource)(new InitialContext()).lookup("java:comp/env/jdbc/MySQL");
 		}
 		return con;
 

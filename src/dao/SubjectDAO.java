@@ -32,6 +32,7 @@ public class SubjectDAO {
 
 		if(rs != null){
 			rs.close();
+
 		}
 		if(stmt != null){
 			stmt.close();
@@ -40,6 +41,8 @@ public class SubjectDAO {
 			con.close();
 		}
 	}
+
+
 
 	public Subject getSubject(int subId,String subName,String subGroup){
 
@@ -114,6 +117,35 @@ public class SubjectDAO {
 				}
 		}
 		return subjects;
+
+	}
+
+
+	public Subject getSubject(int sub_Id){
+
+		Subject subject = new Subject();
+
+		try{
+			connection();
+			String sql = "SELECT sub_id FROM zemi WHERE sub_id = ? ";
+			stmt = con.prepareStatement(sql);
+			stmt.setInt(1, sub_Id);
+			rs.next();
+
+			subject.setSub_id(sub_Id);
+
+
+		}catch(Exception e){
+			subject = null;
+		}finally{
+			try{
+				close();
+			}catch(Exception e){
+
+			}
+		}
+		return subject;
+
 
 	}
 
