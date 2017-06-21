@@ -69,6 +69,8 @@ public class SubjectDAO {
 		}
 		return subject;
 	}
+
+	//科目情報取得
 	public ArrayList<Subject> getSubjectdata(){
 
 		ArrayList<Subject> subjects = new ArrayList<Subject>();
@@ -78,7 +80,7 @@ public class SubjectDAO {
 
 			connection();
 
-			System.out.println("con");
+			//System.out.println("con");
 
 
 			String sql = "SELECT * "
@@ -97,7 +99,7 @@ public class SubjectDAO {
 			subject.setSub_group(rs.getString("sub_group"));
 			subject.setTea_id(rs.getInt("tea_id"));
 
-			System.out.println(rs.getInt("sub_id"));
+			//System.out.println(rs.getInt("sub_id"));
 
 			subjects.add(subject);
 			}

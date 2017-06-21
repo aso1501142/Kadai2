@@ -12,13 +12,22 @@
 	<h1>科目変更・削除</h1>
 
 <table border="1">
+		<tr>
+			<td>科目名</td>
+			<td>科目分類名</td>
+			<td></td>
+			<td></td>
+		</tr>
 	<c:forEach var="subject" items="${subjects}">
 		<tr>
-		    <td><c:out value="${subject.sub_id}"></c:out></td>
 			<td><c:out value="${subject.sub_name}"></c:out></td>
 			<td><c:out value="${subject.sub_group}"></c:out></td>
-			<td><c:out value="${subject.tea_id}"></c:out></td>
+			<form method="post" action="Zemi_change">
+			<td><input type="submit" value="変更" ></td>
+			</form>
+			<td><input type="submit" value="削除"></td>
 		</tr>
+
 	</c:forEach>
 </table>
 </body>
