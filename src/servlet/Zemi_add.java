@@ -57,7 +57,7 @@ public class Zemi_add extends HttpServlet {
 
 			if (subject != null) {
 				request.setAttribute("errorMess", "すでに使われているIDです。");
-				path = "WEB-INf/jsp/zemi_add.jsp";
+				path = "WEB-INF/jsp/zemi_add.jsp";
 				session.invalidate();
 			} else {
 				session.setAttribute("zemiId", subId);

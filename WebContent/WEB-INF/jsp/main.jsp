@@ -11,18 +11,21 @@
 
 <h2>ゼミ受講システム</h2>
 
+
 	<table>
+	<tr>
 		<td>
-			<a href="stu_login.jsp">
+			<a href="Stu_login" >
 			<input type="submit" value="生徒ログイン" style="background:skyblue; color:white;">
 			</a>
 		</td>
 
 		<td>
-			<a href="tea_login.jsp">
+			<a href="Tea_login">
 			<input type="submit" value="管理者ログイン" style="background:orange; color:white;">
 			</a>
 		</td>
+	</tr>
 	</table>
 
 </body>

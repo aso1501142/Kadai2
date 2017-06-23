@@ -37,7 +37,7 @@ public class Tea_login extends HttpServlet {
 
 
 		// ログイン画面に遷移
-		RequestDispatcher rd = request.getRequestDispatcher("/jsp/tea_login.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/jsp/tea_login.jsp");
 		rd.forward(request, response);
 	}
 
