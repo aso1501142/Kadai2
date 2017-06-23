@@ -50,6 +50,8 @@ public class Tea_login extends HttpServlet {
 		// TODO Auto-generated method stub
 		// doGet(request, response);
 
+		System.out.println("tea");
+
 		String path = "";
 
 		try {
@@ -61,9 +63,6 @@ public class Tea_login extends HttpServlet {
 			TeacherDAO teacherDAO = new TeacherDAO();
 			Teacher teacher = new Teacher();
 
-			//System.out.println(stu_id);
-			//System.out.println(stu_password);
-
 			teacher = teacherDAO.getTeacher(tea_id, tea_password);
 
 			if (teacher != null) {
@@ -72,18 +71,18 @@ public class Tea_login extends HttpServlet {
 				session.setAttribute("tea_id", tea_id);
 				session.setAttribute("tea_password", tea_password);
 
-				path = ("/jsp/top.jsp");
+				path = ("WEB-INF/jsp/top.jsp");
 
 			} else {
 				System.out.println("ログイン失敗");
 				request.setAttribute("errorMessage", "IDまたはパスワードが違います。");
-				path = ("/jsp/tea_login.jsp");
+				path = ("WEB-INF/jsp/tea_login.jsp");
 			}
 
 		} catch (Exception e) {
 			System.out.println("ログイン失敗");
 			request.setAttribute("errorMessage", "IDまたはパスワードが違います。");
-			path = ("/jsp/tea_login.jsp");
+			path = ("WEB-INF/jsp/tea_login.jsp");
 		}
 
 		RequestDispatcher rd = request.getRequestDispatcher(path);
