@@ -14,8 +14,11 @@
 
 
 
-	<form action="zemi_add.jsp">
-<input type="submit" value="ゼミ科目登録">
+	<form action="Top" method="post">
+
+<button name="action" value="zemi">ゼミ科目登録</button>
+
+
 </form>
 
 		 <!-- <a href="WEB-INF/jsp/zemi_add.jsp" tabindex="0">

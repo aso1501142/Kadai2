@@ -37,7 +37,7 @@ public class Tea_login extends HttpServlet {
 
 
 		// ログイン画面に遷移
-		RequestDispatcher rd = request.getRequestDispatcher("/jsp/tea_login.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/jsp/tea_login.jsp");
 		rd.forward(request, response);
 	}
 
@@ -50,9 +50,12 @@ public class Tea_login extends HttpServlet {
 		// TODO Auto-generated method stub
 		// doGet(request, response);
 
+		System.out.println("tea");
+
 		String path = "";
 
 		try {
+
 			HttpSession session = request.getSession();
 
 			int tea_id = Integer.parseInt(request.getParameter("tea_id"));
@@ -61,10 +64,12 @@ public class Tea_login extends HttpServlet {
 			TeacherDAO teacherDAO = new TeacherDAO();
 			Teacher teacher = new Teacher();
 
-			//System.out.println(stu_id);
-			//System.out.println(stu_password);
+			//System.out.println(tea_id);
+		    //System.out.println(tea_password);
 
 			teacher = teacherDAO.getTeacher(tea_id, tea_password);
+
+			System.out.println(teacher);
 
 			if (teacher != null) {
 				System.out.println("ログイン成功");
@@ -72,18 +77,18 @@ public class Tea_login extends HttpServlet {
 				session.setAttribute("tea_id", tea_id);
 				session.setAttribute("tea_password", tea_password);
 
-				path = ("/jsp/top.jsp");
+				path = ("WEB-INF/jsp/top.jsp");
 
 			} else {
 				System.out.println("ログイン失敗");
 				request.setAttribute("errorMessage", "IDまたはパスワードが違います。");
-				path = ("/jsp/tea_login.jsp");
+				path = ("WEB-INF/jsp/tea_login.jsp");
 			}
 
 		} catch (Exception e) {
 			System.out.println("ログイン失敗");
 			request.setAttribute("errorMessage", "IDまたはパスワードが違います。");
-			path = ("/jsp/tea_login.jsp");
+			path = ("WEB-INF/jsp/tea_login.jsp");
 		}
 
 		RequestDispatcher rd = request.getRequestDispatcher(path);

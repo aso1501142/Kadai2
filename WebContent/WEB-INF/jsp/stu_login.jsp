@@ -11,7 +11,7 @@
 
 <h2>ゼミ受講システム(生徒)</h2>
 
-	<form method="post" action="/zemi/Stu_login">
+	<form method="post" action="Stu_login">
 	<table>
 		<tr>
 			<td>ID</td>

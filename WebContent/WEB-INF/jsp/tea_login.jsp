@@ -11,6 +11,7 @@
 
 <h2>ゼミ受講システム(管理者)</h2>
 
+<form method="post" action="Tea_login">
 	<table>
 		<tr>
 			<td>ID</td>
@@ -25,6 +26,7 @@
 	</table>
 
 	<input type="submit" value="Login">
+</form>
 
 </body>
 </html>
