@@ -46,6 +46,7 @@ public class SeminarDAO {
 			stmt = con.prepareStatement(sql);
 			stmt.setInt(1, stu_id);
 			stmt.setInt(2, sub_id);
+			rs = stmt.executeQuery();
 
 			rs.next();
 			seminar.setStu_id(stu_id);

@@ -21,9 +21,12 @@
 		</td>
 
 		<td>
-			<a href="Tea_login">
+			<!--  <a href="Tea_login">
 			<input type="submit" value="管理者ログイン" style="background:orange; color:white;">
-			</a>
+			</a>  -->
+			<form method="get" action="Tea_login">
+			<input type="submit" value="管理者ログイン" style="background:orange; color:white;">
+			</form>
 		</td>
 	</tr>
 	</table>

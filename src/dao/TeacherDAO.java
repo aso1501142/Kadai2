@@ -48,18 +48,14 @@ public class TeacherDAO {
 
 		try{
 			connection();
-			System.out.println("うんこ0");
 
 			String sql ="SELECT tea_id FROM teacher WHERE tea_id = ? AND tea_password = ?";
 
 			stmt = con.prepareStatement(sql);
-			System.out.println("うんこ1");
 			stmt.setInt(1, teacherId);
 			stmt.setString(2, password);
-			System.out.println("うんこ2");
 			rs = stmt.executeQuery();
 
-			System.out.println("うんこ3");
 
 
 			rs.next();

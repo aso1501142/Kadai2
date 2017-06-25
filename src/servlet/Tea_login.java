@@ -50,7 +50,6 @@ public class Tea_login extends HttpServlet {
 		// TODO Auto-generated method stub
 		// doGet(request, response);
 
-		System.out.println("tea");
 
 		String path = "";
 
@@ -67,7 +66,6 @@ public class Tea_login extends HttpServlet {
 
 			if (teacher != null) {
 				System.out.println("ログイン成功");
-				// session.setAttribute("CommonLoginStudent", student);
 				session.setAttribute("tea_id", tea_id);
 				session.setAttribute("tea_password", tea_password);
 

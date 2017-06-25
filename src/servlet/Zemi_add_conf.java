@@ -39,9 +39,9 @@ public class Zemi_add_conf extends HttpServlet {
 
 		try{
 
-			HttpSession session = request.getSession(false);
+			HttpSession session = request.getSession();
 
-			int subId = Integer.parseInt((String)session.getAttribute("zemiId"));
+			int subId = (int)session.getAttribute("zemiId");
 			String subName = (String)session.getAttribute("zemiName");
 			String subGroup = (String)session.getAttribute("zemiGroup");
 
@@ -57,10 +57,11 @@ public class Zemi_add_conf extends HttpServlet {
 				System.out.println("エラーが発生しています。");
 			}
 
+			session.invalidate();
+
 			RequestDispatcher rd = request.getRequestDispatcher(path);
 			rd.forward(request, response);
 
-			session.invalidate();
 
 		}catch(Exception e){
 			path="WEB-INF/jsp/zemi_add_conf.jsp";

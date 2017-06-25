@@ -55,6 +55,7 @@ public class SubjectDAO {
 			stmt.setInt(1, subId);
 			stmt.setString(2, subName);
 			stmt.setString(3, subGroup);
+			rs = stmt.executeQuery();
 
 			rs.next();
 			subject.setSub_id(subId);
@@ -127,9 +128,10 @@ public class SubjectDAO {
 
 		try{
 			connection();
-			String sql = "SELECT sub_id FROM zemi WHERE sub_id = ? ";
+			String sql = "SELECT sub_id FROM subject WHERE sub_id = ? ";
 			stmt = con.prepareStatement(sql);
 			stmt.setInt(1, sub_Id);
+			rs = stmt.executeQuery();
 			rs.next();
 
 			subject.setSub_id(sub_Id);

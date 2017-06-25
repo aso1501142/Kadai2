@@ -37,8 +37,6 @@ public class Top extends HttpServlet {
 			String path = null;
 			String action =request.getParameter("action");
 
-			System.out.println(request.getParameter("action"));
-
 			if("zemi".equals(action)){
 				path="WEB-INF/jsp/zemi_add.jsp";
 			}else if("change".equals(action)){
