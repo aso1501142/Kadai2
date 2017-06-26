@@ -29,8 +29,8 @@
 		<a href="Zemi_change" tabindex="-1">
 			<input name="change" type="button" value="変更・削除">
 		</a>
-
+<form action="Top" method="POST">
 		<button name="action" value="entry">申込状況</button>
-
+</form>
 </body>
 </html>

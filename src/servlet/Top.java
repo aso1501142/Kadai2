@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,6 +9,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import dao.SubjectDAO;
+import model.Subject;
 
 /**
  * Servlet implementation class Top
@@ -31,10 +35,11 @@ public class Top extends HttpServlet {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 
+		String path = null;
 
 		try{
 
-			String path = null;
+
 			String action =request.getParameter("action");
 
 			if("zemi".equals(action)){
@@ -42,7 +47,11 @@ public class Top extends HttpServlet {
 			}else if("change".equals(action)){
 				path="WEB-INF/jsp/zemi_change.jsp";
 			}else if("entry".equals(action)){
-				path="WEB-INF/jsp/zemi_stu.jsp";
+				SubjectDAO subjectDAO = new SubjectDAO();
+				ArrayList<Subject> subjects = new ArrayList<Subject>();
+				subjects = subjectDAO.getSubjectdata();
+				request.setAttribute("subjects", subjects);
+				path="WEB-INF/jsp/subject_list.jsp";
 			}else{
 				throw new Exception();
 			}
@@ -52,7 +61,8 @@ public class Top extends HttpServlet {
 			rd.forward(request, response);
 
 		}catch(Exception e){
-
+			System.out.println(e);
+			path="WEB-INF/jsp/top.jsp";
 		}
 	}
 

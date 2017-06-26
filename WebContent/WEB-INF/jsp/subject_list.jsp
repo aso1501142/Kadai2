@@ -10,16 +10,18 @@
 </head>
 <body>
 
+
+
 <%
-   ArrayList<String> arr = request.getAttribute("subjects");
+  ArrayList<String> arr = request.getAttribute("subjects");
 
    int flg =111;
 
    for (int i=0; i<arr.size(); i++) {
        String sbg = subject.getSub_group(i);
-       
+
        if(flg%10 == 1){}
-       
+
        if (sbg.equals("IT")) {
            // ITの場合
 
@@ -30,7 +32,6 @@
        }
    }
 %>
-
 
 </body>
 </html>

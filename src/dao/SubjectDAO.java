@@ -125,6 +125,7 @@ public class SubjectDAO {
 	public Subject getSubject(int sub_Id){
 
 		Subject subject = new Subject();
+		System.out.println("dfghnm");
 
 		try{
 			connection();
@@ -132,9 +133,9 @@ public class SubjectDAO {
 			stmt = con.prepareStatement(sql);
 			stmt.setInt(1, sub_Id);
 			rs = stmt.executeQuery();
-			rs.next();
 
-			subject.setSub_id(sub_Id);
+			rs.next();
+			subject.setSub_id(rs.getInt(sub_Id));
 
 
 		}catch(Exception e){
