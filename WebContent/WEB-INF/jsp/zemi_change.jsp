@@ -22,9 +22,11 @@
 		<tr>
 			<td><c:out value="${subject.sub_name}"></c:out></td>
 			<td><c:out value="${subject.sub_group}"></c:out></td>
+			<td>
 			<form method="post" action="Zemi_change">
-			<td><input type="submit" value="変更" ></td>
+			<button type="submit" name="sub_id" value="${subject.sub_id}">変更</button>
 			</form>
+			</td>
 			<td><input type="submit" value="削除"></td>
 		</tr>
 
