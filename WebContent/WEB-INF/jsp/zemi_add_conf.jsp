@@ -15,12 +15,12 @@
 
 		<p>
 			科目ID:
-			<c:out <%request.getAttribute("zemiId");%> />
+			<%= session.getAttribute("zemiId") %>
 			科目名:
-			<c:out <%request.getAttribute("zemiName");%> />
+			<%= session.getAttribute("zemiName") %>
 			科目分類名:
-			<c:out <%request.getAttribute("zemiGroup");%> />
-
+			<%= session.getAttribute("zemiGroup") %>
+			</p>
 			<a href="zemi_add.jsp" tabindex="-1">
 			<input name="back" type="button"value="戻る">
 			</a>

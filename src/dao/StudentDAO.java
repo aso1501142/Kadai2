@@ -51,6 +51,7 @@ public class StudentDAO {
 			stmt = con.prepareStatement(sql);
 			stmt.setInt(1, stu_id);
 			stmt.setString(2, password);
+			rs = stmt.executeQuery();
 
 			rs.next();
 			student.setStu_id(stu_id);

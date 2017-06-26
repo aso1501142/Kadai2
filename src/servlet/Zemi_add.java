@@ -44,11 +44,11 @@ public class Zemi_add extends HttpServlet {
 
 		try {
 
-			HttpSession session = request.getSession(true);
+			HttpSession session = request.getSession();
 
-			int subId = Integer.parseInt(request.getParameter("zemiId"));
-			String subName = request.getParameter("zemiName");
-			String subGroup = request.getParameter("zemiGroup");
+			int subId = Integer.parseInt(request.getParameter("subId"));
+			String subName = request.getParameter("subName");
+			String subGroup = request.getParameter("subGroup");
 
 			SubjectDAO subjectDAO = new SubjectDAO();
 			Subject subject = new Subject();
@@ -57,7 +57,7 @@ public class Zemi_add extends HttpServlet {
 
 			if (subject != null) {
 				request.setAttribute("errorMess", "すでに使われているIDです。");
-				path = "WEB-INf/jsp/zemi_add.jsp";
+				path = "WEB-INF/jsp/zemi_add.jsp";
 				session.invalidate();
 			} else {
 				session.setAttribute("zemiId", subId);
@@ -70,7 +70,7 @@ public class Zemi_add extends HttpServlet {
 			rd.forward(request, response);
 
 		} catch (Exception e) {
-
+			System.out.println(e);
 		}
 	}
 

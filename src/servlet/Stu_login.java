@@ -31,9 +31,12 @@ public class Stu_login extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 
+
+
+
 		//ログイン画面に遷移
 		RequestDispatcher rd =
-				request.getRequestDispatcher("/jsp/stu_login.jsp");
+				request.getRequestDispatcher("WEB-INF/jsp/stu_login.jsp");
 		rd.forward(request, response);
 	}
 

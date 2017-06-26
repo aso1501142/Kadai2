@@ -29,7 +29,6 @@
 			<input name="back" type="button" value="戻る"onclick='location.href="top.jsp"'>
 		</a>
 		<input type=submit value="確認画面へ">
-
 	</form>
 </body>
 </html>

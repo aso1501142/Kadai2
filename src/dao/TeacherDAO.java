@@ -21,6 +21,7 @@ public class TeacherDAO {
 		if(ds == null){
 			ds = (DataSource)(new InitialContext()).lookup("java:comp/env/jdbc/MySQL");
 		}
+		con = (Connection) ds.getConnection();
 		return con;
 
 	}
@@ -40,22 +41,30 @@ public class TeacherDAO {
 
 	public Teacher getTeacher(int teacherId, String password){
 
+		System.out.println(teacherId);
+		System.out.println(password);
+
 		Teacher teacher = new Teacher();
 
 		try{
-
 			connection();
-			String sql ="SELECT tea_id,tea_password FROM teacher WEHRE tea_id = ? and tea_password = ?";
+
+			String sql ="SELECT tea_id FROM teacher WHERE tea_id = ? AND tea_password = ?";
+
 			stmt = con.prepareStatement(sql);
 			stmt.setInt(1, teacherId);
 			stmt.setString(2, password);
+			rs = stmt.executeQuery();
+
+
 
 			rs.next();
-			teacher.setTeacherId(teacherId);
-			teacher.setPassword(password);
+			teacher.setTeacherId(rs.getInt("tea_id"));
+
 
 
 		}catch(Exception e){
+			System.out.println(e);
 			teacher = null;
 		}finally{
 			try{

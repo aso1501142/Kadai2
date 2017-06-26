@@ -12,15 +12,25 @@
 
 	<input type="submit" value="ログアウト" />
 
-	<form method="post" action="">
 
-		<button name="action" value="zemi">ゼミ科目登録</button>
+
+	<form action="Top" method="post">
+
+<button name="action" value="zemi">ゼミ科目登録</button>
+
+
+</form>
+
+		 <!-- <a href="WEB-INF/jsp/zemi_add.jsp" tabindex="0">
+			<input name="add" type="button" value="ゼミ科目登録" onclick="location.href='WEB-INF/jsp/zemi_add.jsp'">
+		</a> -->
+
+
 		<a href="Zemi_change" tabindex="-1">
 			<input name="change" type="button" value="変更・削除">
 		</a>
-		<button name="action" value="entry">申込状況</button>
 
-	</form>
+		<button name="action" value="entry">申込状況</button>
 
 </body>
 </html>

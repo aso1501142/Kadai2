@@ -15,8 +15,8 @@
 	<table>
 	<tr>
 		<td>
-			<a href="stu_login.jsp">
-			<input id="Stubutton" type="submit" name="submit" value="生徒ログイン" style="width:300px; height:300px"/>
+			<a href="Stu_login" >
+			<input type="submit" value="生徒ログイン" style="background:skyblue; color:white;">
 			</a>
 		</td>
 
