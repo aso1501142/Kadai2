@@ -1,0 +1,282 @@
+@CHARSET "UTF-8";
+
+/*Manabutton設定*/
+input#Manabutton {
+	display: inline-block;
+	width: 200px;
+	height: 54px;
+	text-align: center;
+	text-decoration: none;
+	line-height: 54px;
+	outline: none;
+	background-color: #FFA500;
+	border: 2px solid #FFA500;
+	color: #fff;
+	line-height: 50px;
+	background-color: #FFA500;
+	border: 2px solid #FFA500;
+	color: #fff;
+	line-height: 50px;
+	font-size: 30px;
+}
+input#Manabutton::before,
+input#Manabutton::after {
+	position: absolute;
+	z-index: -1;
+	display: block;
+	content: '';
+}
+input#Manabutton,
+input#Manabutton::before,
+input#Manabutton::after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
+input#Manabutton:hover {
+	background-color: #fff;
+	border-color: #FFA500;
+	color: #FFA500;
+	}
+
+/*Stubutton設定*/
+input#Stubutton {
+	display: inline-block;
+	width: 200px;
+	height: 54px;
+	text-align: center;
+	text-decoration: none;
+	line-height: 54px;
+	outline: none;
+	background-color: #29B6F6;
+	border: 2px solid #29B6F6;
+	color: #fff;
+	line-height: 50px;
+	background-color: #29B6F6;
+	border: 2px solid #29B6F6;
+	color: #fff;
+	line-height: 50px;
+	font-size: 30px;
+}
+input#Stubutton::before,
+input#Stubutton::after {
+	position: absolute;
+	z-index: -1;
+	display: block;
+	content: '';
+}
+input#Stubutton,
+input#Stubutton::before,
+input#Stubutton::after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
+input#Stubutton:hover {
+	background-color: #fff;
+	border-color: #29B6F6;
+	color: #29B6F6;
+	}
+
+/*Zemibutton設定*/
+input#Zemibutton {
+	margin: 20px;
+	display: inline-block;
+	width: 200px;
+	height: 54px;
+	text-align: center;
+	text-decoration: none;
+	line-height: 54px;
+	outline: none;
+	background-color: #FFA500;
+	border: 2px solid #FFA500;
+	color: #fff;
+	line-height: 50px;
+	background-color: #FFA500;
+	border: 2px solid #FFA500;
+	color: #fff;
+	line-height: 50px;
+}
+input#Zemibutton::before,
+input#Zemibutton::after {
+	margin: 20px;
+	position: absolute;
+	z-index: -1;
+	display: block;
+	content: '';
+}
+input#Zemibutton,
+input#Zemibutton::before,
+input#Zemibutton::after {
+	margin: 20px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
+
+input#Zemibutton:hover {
+	background-color: #fff;
+	border-color: #FFA500;
+	color: #FFA500;
+	}
+
+/*メイン画面設定*/
+h1#mainhead{
+	padding: 10px 0px 10px 0px;
+	font-size: 30px;
+	background-color: #006666;
+	color: #FFFFFF;
+}
+
+.center span{
+	font-size:25px;
+}
+
+/**管理者ページ設定*/
+h1#manahead{
+	padding: 10px 0px 10px 0px;
+	font-size: 30px;
+	background-color: #FFA500;
+	color: #FFFFFF;
+}
+.center {
+	margin: 0px 100px 20px 100px;
+	padding: 30px 30px 80px 30px;
+	text-align: center;
+	background-color: #ffffff;
+}
+label {
+	font-size: 30px;
+	font-family: 03スマートフォントUI;
+	color: #FFFFFF;
+}
+body#managerpage {
+line-height:130%;
+}
+
+/*生徒用ページ設定*/
+h1#stuhead{
+	padding: 10px 0px 10px 0px;
+	font-size: 30px;
+	background-color: #29B6F6;
+	color: #FFFFFF;
+}
+
+
+
+/*管理者用ログイン吹き出し設定*/
+.manaballoon {
+	margin: 0px 20% 40px 20%;
+	border-color: #FFA500;
+	border-style: solid;
+	background-color: #FFA500;
+	padding: 50px;
+	position: relative;
+}
+.manaballoon:after {
+  border-top: 20px solid #FFA500;
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
+  content: '';
+  margin-left: -10px;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+}
+
+/*生徒用ログイン吹き出し設定*/
+.stuballoon {
+	margin: 0px 20% 40px 20%;
+	border-color: #29B6F6;
+	border-style: solid;
+	background-color: #29B6F6;
+	padding: 50px;
+	position: relative;
+}
+.stuballoon:after {
+  border-top: 20px solid #29B6F6;
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
+  content: '';
+  margin-left: -10px;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+}
+
+.stupage{
+	width: 80%;
+	margin-right: 100px;
+	margin-left: 100px;
+	background-color:
+}
+.stubutton{
+	width: 100%;
+	text-align: center;
+	margin-top: 50px;
+}
+.stustatus{
+	padding: 50px;
+	width: 100%;
+	float:left;
+
+}
+
+/*申込一覧リスト設定*/
+ul, ol{
+  padding: 0;
+  position: relative;
+}
+
+.itlist ul li, ol li{
+  color: #2d8fdd;
+  border-left: solid 6px #2d8fdd;/*左側の線*/
+  background: #f1f8ff;/*背景色*/
+  margin-bottom: 3px;/*下のバーとの余白*/
+ 	line-height: 1.5;
+  	padding: 0.5em;
+  list-style-type: none!important;/*ポチ消す*/
+}
+
+.englist ul li, ol li{
+  color: #f57f17;
+  border-left: solid 6px #fbc02d;/*左側の線*/
+  background: #fff9c4;/*背景色*/
+  margin-bottom: 3px;/*下のバーとの余白*/
+ 	line-height: 1.5;
+  	padding: 0.5em;
+  list-style-type: none!important;/*ポチ消す*/
+}
+
+.comlist ul li, ol li{
+  color: #ad1457;
+  border-left: solid 6px #f06292;/*左側の線*/
+  background: #ffebee;/*背景色*/
+  margin-bottom: 3px;/*下のバーとの余白*/
+ 	line-height: 1.5;
+  	padding: 0.5em;
+  list-style-type: none!important;/*ポチ消す*/
+}
+
+
+h3#it{
+	background:#2d8fdd;
+}
+h3#eng{
+	background:#fdd835;
+}
+h3#comm{
+	background:#f06292;
+}
+
+
+/*ゼミ申込ページセレクトボックス設定*/
+
+
+/*終了*/

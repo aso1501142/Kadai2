@@ -5,24 +5,30 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>課題2</title>
 </head>
 <body>
 
-<h2>ゼミ受講システム</h2>
+<h1 id="mainhead">ゼミ受講システム</h1>
+
 
 	<table>
+	<tr>
 		<td>
 			<a href="stu_login.jsp">
-			<input type="submit" value="生徒ログイン" style="background:skyblue; color:white;">
+			<input id="Stubutton" type="submit" name="submit" value="生徒ログイン" style="width:300px; height:300px"/>
 			</a>
 		</td>
 
 		<td>
-			<a href="tea_login.jsp">
+			<!--  <a href="Tea_login">
 			<input type="submit" value="管理者ログイン" style="background:orange; color:white;">
-			</a>
+			</a>  -->
+			<form method="get" action="Tea_login">
+			<input type="submit" value="管理者ログイン" style="background:orange; color:white;">
+			</form>
 		</td>
+	</tr>
 	</table>
 
 </body>
