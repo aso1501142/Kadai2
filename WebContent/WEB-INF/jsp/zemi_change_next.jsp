@@ -18,14 +18,14 @@
 			<td><c:out value="${subject.tea_id}"></c:out></td>
 		</tr>
 </table> -->
-
+	<form method="post" action="Zemi_change_next">
 		科目ID<input type="text" name="subId" value="${subject.sub_id}"><br>
 		科目名<input type="text" name="subName" value="${subject.sub_name}"><br>
 		科目分類<input type="text"name="subGroup" value="${subject.sub_group}"><br>
-		教師ID<input type="text" name="subId" value="${subject.tea_id}"><br>
+		教師ID<input type="text" name="teaId" value="${subject.tea_id}"><br>
 
-		<form method="post" action="Zemi_change_next">
-			<button type="submit" name="sub_id" value="${subject.sub_id}">確定</button>
+
+	<button type="submit" name="sub_id" value="${subject.sub_id}">確定</button>
 			</form>
 
 

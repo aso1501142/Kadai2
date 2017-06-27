@@ -183,4 +183,33 @@ public class SubjectDAO {
 
 
 	}
+	public Subject changeSubject(int new_sub_id, String new_sub_name, String new_sub_group, int new_tea_id, int sub_id){
+
+		Subject subject = new Subject();
+
+
+		try{
+			connection();
+			String sql = "UPDATE subject SET sub_id = ?, sub_name = ?, sub_group = ?, tea_id = ? ";
+			stmt = con.prepareStatement(sql);
+			stmt.setInt(1, sub_id);
+			rs = stmt.executeQuery();
+
+			rs.next();
+			subject.setSub_id(rs.getInt(sub_id));
+
+
+		}catch(Exception e){
+			subject = null;
+		}finally{
+			try{
+				close();
+			}catch(Exception e){
+
+			}
+		}
+		return subject;
+
+
+	}
 }
