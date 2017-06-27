@@ -35,7 +35,7 @@ public class Zemi_add_conf extends HttpServlet {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 
-		String path = null;
+		String path = "WEB-INF/jsp/top.jsp";
 
 		try{
 
@@ -44,15 +44,14 @@ public class Zemi_add_conf extends HttpServlet {
 			int subId = (int)session.getAttribute("zemiId");
 			String subName = (String)session.getAttribute("zemiName");
 			String subGroup = (String)session.getAttribute("zemiGroup");
+			int teaId = (int)session.getAttribute("teaId");
 
 			SubjectDAO subjectDAO = new SubjectDAO();
 			Subject subject = new Subject();
 
-			subject = subjectDAO.getSubject(subId, subName, subGroup);
+			subject = subjectDAO.getSubject(subId, subName, subGroup,teaId);
 
-			if(subject != null){
-				path = "WEB-INF/jsp/top.jsp";
-			}else{
+			if(subject.equals(null)){
 				path="WEB-INF/jsp/zemi_add_conf.jsp";
 				System.out.println("エラーが発生しています。");
 			}

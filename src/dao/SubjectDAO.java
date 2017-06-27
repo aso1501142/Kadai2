@@ -16,6 +16,7 @@ public class SubjectDAO {
 	Connection con = null;
 	PreparedStatement stmt = null;
 	ResultSet rs = null;
+	int ret = 0;
 
 	public Connection connection() throws Exception{
 
@@ -44,25 +45,23 @@ public class SubjectDAO {
 
 
 
-	public Subject getSubject(int subId,String subName,String subGroup){
+	public Subject getSubject(int subId,String subName,String subGroup,int teaId){
 
 		Subject subject = new Subject();
 
 		try{
 			connection();
-			String sql = "INSERT INTO subject(sub_id.sub_name,sub_group) VALUES(?,'?','?') ";
+			String sql = "INSERT INTO subject(sub_id,sub_name,sub_group,tea_id) VALUES(?,?,?,?)";
 			stmt = con.prepareStatement(sql);
 			stmt.setInt(1, subId);
 			stmt.setString(2, subName);
 			stmt.setString(3, subGroup);
-			rs = stmt.executeQuery();
+			stmt.setInt(4, teaId);
+			ret = stmt.executeUpdate();
 
-			rs.next();
-			subject.setSub_id(subId);
-			subject.setSub_name(subName);
-			subject.setSub_group(subGroup);
 
 		}catch(Exception e){
+			System.out.println(e);
 			subject = null;
 		}finally{
 			try{

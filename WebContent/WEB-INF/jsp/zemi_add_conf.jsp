@@ -9,7 +9,7 @@
 </head>
 <body>
 
-	<form method="post" action="">
+	<form method="post" action="Zemi_add_conf">
 
 		<h1>登録科目確認</h1>
 
@@ -21,6 +21,8 @@
 			科目分類名:
 			<%= session.getAttribute("zemiGroup") %>
 			</p>
+			担当教師ID:
+			<%= session.getAttribute("teaId") %>
 			<a href="zemi_add.jsp" tabindex="-1">
 			<input name="back" type="button"value="戻る">
 			</a>

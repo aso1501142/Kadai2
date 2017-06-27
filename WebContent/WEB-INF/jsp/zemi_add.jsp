@@ -25,6 +25,7 @@
 		科目ID<input type="text" name="subId"><br>
 		科目名<input type="text" name="subName"><br>
 		科目分類<input type="text"name="subGroup"><br>
+		担当教師ID<input type="text" name="tea_Id"><br>
 		<a href="top.jsp" tabindex="-1">
 			<input name="back" type="button" value="戻る"onclick='location.href="top.jsp"'>
 		</a>
