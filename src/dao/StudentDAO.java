@@ -21,6 +21,7 @@ public class StudentDAO {
 		if (ds == null) {
 			ds = (DataSource)(new InitialContext()).lookup("java:comp/env/jdbc/MySQL");
 		}
+		con = (Connection) ds.getConnection();
 		return con;
 
 	}

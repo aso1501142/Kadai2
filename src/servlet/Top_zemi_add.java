@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,14 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.SubjectDAO;
-import model.Subject;
-
 /**
- * Servlet implementation class Zemi_change
+ * Servlet implementation class Top_zemi_add
  */
-@WebServlet("/Zemi_change")
-public class Zemi_change extends HttpServlet {
+@WebServlet("/Top_zemi_add")
+public class Top_zemi_add extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -26,19 +22,6 @@ public class Zemi_change extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-
-
-		SubjectDAO subjectDAO = new SubjectDAO();
-
-
-		ArrayList<Subject> subjects = new ArrayList<Subject>();
-
-		subjects = subjectDAO.getSubjectdata();
-
-		request.setAttribute("subjects", subjects);
-
-		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/jsp/zemi_change.jsp");
-		rd.forward(request, response);
 	}
 
 	/**
@@ -47,22 +30,11 @@ public class Zemi_change extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
-		String id = request.getParameter("sub_id");
-		int sub_id = Integer.parseInt(id);
 
-		SubjectDAO subjectDAO = new SubjectDAO();
 
-		Subject subject = new Subject();
-		subject=subjectDAO.changeClick(sub_id);
 
-		request.setAttribute("subject", subject);
-
-		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/jsp/zemi_change_next.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/jsp/zemi_add.jsp");
 		rd.forward(request, response);
-
-
-
-
 	}
 
 }

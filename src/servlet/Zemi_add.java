@@ -29,6 +29,9 @@ public class Zemi_add extends HttpServlet {
 		// TODO Auto-generated method stub
 		// response.getWriter().append("Served at:
 		// ").append(request.getContextPath());
+
+		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/jsp/top.jsp");
+		rd.forward(request, response);
 	}
 
 	/**
@@ -49,6 +52,7 @@ public class Zemi_add extends HttpServlet {
 			int subId = Integer.parseInt(request.getParameter("subId"));
 			String subName = request.getParameter("subName");
 			String subGroup = request.getParameter("subGroup");
+			int teaId = Integer.parseInt(request.getParameter("tea_Id"));
 
 			SubjectDAO subjectDAO = new SubjectDAO();
 			Subject subject = new Subject();
@@ -63,6 +67,7 @@ public class Zemi_add extends HttpServlet {
 				session.setAttribute("zemiId", subId);
 				session.setAttribute("zemiName", subName);
 				session.setAttribute("zemiGroup", subGroup);
+				session.setAttribute("teaId", teaId);
 				path = "WEB-INF/jsp/zemi_add_conf.jsp";
 			}
 

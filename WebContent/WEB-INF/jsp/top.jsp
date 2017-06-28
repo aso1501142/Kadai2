@@ -5,19 +5,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>課題2</title>
-<link href="css/kadai2.css" rel="stylesheet" type="text/css" charset="utf-8"/>
+<title>Insert title here</title>
 </head>
-<body id="managerpage">
+<body>
 
-<h1 id="manahead">ゼミ受講システム(管理者)</h1>
 
 	<input type="submit" value="ログアウト" />
 
-	<div class="center">
+
+
 	<form action="Top" method="post">
 
-	<input id="Zemibutton" type ="submit" name="action" value="zemi" style="width:400px; height:100px"/>ゼミ科目登録</button><br/>
+<button name="action" value="zemi">ゼミ科目登録</button>
+
 
 	</form>
 
@@ -27,10 +27,10 @@
 
 
 		<a href="Zemi_change" tabindex="-1">
-			<input id="Zemibutton" type="submit" name="change" value="変更・削除" style="width:400px; height:100px"/><br/>
+			<input name="change" type="button" value="変更・削除">
 		</a>
-
-		<button input id="Zemibutton" type="submit" name="action" value="entry" style="width:400px; height:100px"/>申込状況</button><br/>
-
+<form action="Top" method="POST">
+		<button name="action" value="entry">申込状況</button>
+</form>
 </body>
 </html>
