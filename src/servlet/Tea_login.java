@@ -50,7 +50,6 @@ public class Tea_login extends HttpServlet {
 		// TODO Auto-generated method stub
 		// doGet(request, response);
 
-
 		String path = "";
 
 		try {

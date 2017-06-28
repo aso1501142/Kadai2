@@ -6,17 +6,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>課題2</title>
+<link href="css/kadai2.css" rel="stylesheet" type="text/css" charset="utf-8"/>
 </head>
 <body>
 
 <h1 id="mainhead">ゼミ受講システム</h1>
 
-
+	<div class="center">
 	<table>
-	<tr>
+  	<tr>
 		<td>
 			<a href="Stu_login" >
-			<input type="submit" value="生徒ログイン" style="background:skyblue; color:white;">
+			<input id="Stubutton" type="submit" name="submit" value="生徒ログイン" style="width:300px; height:300px"/>
 			</a>
 		</td>
 
@@ -25,11 +26,12 @@
 			<input type="submit" value="管理者ログイン" style="background:orange; color:white;">
 			</a>  -->
 			<form method="get" action="Tea_login">
-			<input type="submit" value="管理者ログイン" style="background:orange; color:white;">
+			<input id="Manabutton" type="submit" name="submit" value="管理者ログイン" style="width:300px; height:300px"/>
 			</form>
 		</td>
 	</tr>
 	</table>
+	</div>
 
 </body>
 </html>

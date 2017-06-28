@@ -5,28 +5,44 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>課題2</title>
+<link href="css/kadai2.css" rel="stylesheet" type="text/css" charset="utf-8"/>
 </head>
-<body>
+<body id="managerpage">
 
-<h2>ゼミ受講システム(管理者)</h2>
+<h1 id="manahead">ゼミ受講システム(管理者)</h1>
 
-<form method="post" action="Tea_login">
+	<div id="targe" style="color: red;">
+		<c:forEach var="error" items ="${errorMessageList}" varStatus="status">
+			<p>
+				<c:out value="${error}" />
+			</p>
+		</c:forEach>
+		<c:out value="${errorMessage}" />
+	</div>
+
+	<div class="center">
+	<div class="manaballoon">
+
+	<form method="post" action="Tea_login">
 	<table>
-		<tr>
-			<td>ID</td>
-			<td><input type="text" name="tea_id" size="15"></td>
-		</tr>
 
-		<tr>
-			<td>Password</td>
-			<td><input type="password" name="tea_password" size="15"></td>
-		</tr>
+			<label>ID</label><br/>
+			<input type="text" name="tea_id"/>
+			<br/><br/>
+
+			<label>Password</label><br/>
+			<input type="password" name="tea_password">
+			<br/><br/>
 
 	</table>
+	</div>
 
-	<input type="submit" value="Login">
-</form>
+	<input id="Manabutton" type="submit" name="submit" value="Login"/>
+	<br/>
+
+	</form>
+	</div>
 
 </body>
 </html>

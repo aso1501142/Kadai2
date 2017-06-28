@@ -6,27 +6,44 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>課題2</title>
+<link href="css/kadai2.css" rel="stylesheet" type="text/css" charset="utf-8"/>
 </head>
-<body>
+<body id="studentpage">
 
-<h2>ゼミ受講システム(生徒)</h2>
+<h1 id="stuhead">ゼミ受講システム(生徒)</h1>
 
+	<div id="targe" style="color: red;">
+		<c:forEach var="error" items ="${errorMessageList}" varStatus="status">
+			<p>
+				<c:out value="${error}" />
+			</p>
+		</c:forEach>
+		<c:out value="${errorMessage}" />
+	</div>
+
+	<div class="center">
+	<div class="stuballoon">
 	<form method="post" action="Stu_login">
-	<table>
-		<tr>
-			<td>ID</td>
-			<td><input type="text" name="stu_id" size="15"></td>
-		</tr>
 
-		<tr>
-			<td>Password</td>
-			<td><input type="password" name="stu_password" size="15"></td>
-		</tr>
+	<table>
+
+		<label>ID</label><br/>
+		<input type="text" name="stu_id"/>
+		<br/><br/>
+
+		<label>Password</label><br/>
+		<input type="password" name="stu_password"/>
+		<br/><br/>
 
 	</table>
 
-	<input type="submit" value="Login">
+	</div>
+
+	<input id="Stubutton" type="submit" name="submit" value="Login"/>
+	<br/>
+
 	</form>
+	</div>
 
 </body>
 </html>
