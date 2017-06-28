@@ -5,32 +5,34 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>課題2</title>
+<link href="css/kadai2.css" rel="stylesheet" type="text/css" charset="utf-8"/>
 </head>
 <body>
 
+<h1 id="manahead">ゼミ受講システム(管理者)</h1>
 
 	<input type="submit" value="ログアウト" />
 
+	<div class="center">
 
-
-	<form action="Top" method="post">
-
-<button name="action" value="zemi">ゼミ科目登録</button>
-
-
+	<form action="Top_zemi_add" method="post">
+		<input id="Zemibutton" type="submit" name="action" value="ゼミ科目登録" style="width:400px; height:100px"/><br/>
 	</form>
 
 		 <!-- <a href="WEB-INF/jsp/zemi_add.jsp" tabindex="0">
 			<input name="add" type="button" value="ゼミ科目登録" onclick="location.href='WEB-INF/jsp/zemi_add.jsp'">
 		</a> -->
 
+	<a href="Zemi_change" tabindex="-1">
+		<input id="Zemibutton" type="submit" name="change" value="ゼミ科目変更・削除" style="width:400px; height:100px"/><br/>
+	</a>
 
-		<a href="Zemi_change" tabindex="-1">
-			<input name="change" type="button" value="変更・削除">
-		</a>
-<form action="Top" method="POST">
-		<button name="action" value="entry">申込状況</button>
-</form>
+	<form action="Top" method="POST">
+		<input id="Zemibutton" type="submit" name="action" value="ゼミ科目申込状況" style="width:400px; height:100px"/><br/>
+	</form>
+
+	</div>
+
 </body>
 </html>
