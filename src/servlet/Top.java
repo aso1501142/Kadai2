@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.SubjectDAO;
 import model.Subject;
@@ -39,19 +40,32 @@ public class Top extends HttpServlet {
 
 		try{
 
-
+			HttpSession session = request.getSession();
 			String action =request.getParameter("action");
 
 			if("zemi".equals(action)){
 				path="WEB-INF/jsp/zemi_add.jsp";
+
+
 			}else if("change".equals(action)){
 				path="WEB-INF/jsp/zemi_change.jsp";
+
+
 			}else if("entry".equals(action)){
 				SubjectDAO subjectDAO = new SubjectDAO();
 				ArrayList<Subject> subjects = new ArrayList<Subject>();
-				subjects = subjectDAO.getSubjectdata();
-				request.setAttribute("subjects", subjects);
+				subjects = subjectDAO.getSubjectdata("IT");
+				session.setAttribute("IT", subjects);
+
+				subjects = subjectDAO.getSubjectdata("English");
+				session.setAttribute("English", subjects);
+
+				subjects = subjectDAO.getSubjectdata("communication");
+				session.setAttribute("commnuication", subjects);
+
 				path="WEB-INF/jsp/subject_list.jsp";
+
+
 			}else{
 				throw new Exception();
 			}

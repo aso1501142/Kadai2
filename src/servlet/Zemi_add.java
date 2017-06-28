@@ -29,6 +29,9 @@ public class Zemi_add extends HttpServlet {
 		// TODO Auto-generated method stub
 		// response.getWriter().append("Served at:
 		// ").append(request.getContextPath());
+
+		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/jsp/top.jsp");
+		rd.forward(request, response);
 	}
 
 	/**

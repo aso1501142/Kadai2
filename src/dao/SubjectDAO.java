@@ -212,4 +212,51 @@ public class SubjectDAO {
 
 
 	}
+
+	public ArrayList<Subject> getSubjectdata(String sub){
+
+		ArrayList<Subject> subjects = new ArrayList<Subject>();
+
+		try{
+			//DB接続
+
+			connection();
+
+			//System.out.println("con");
+
+
+			String sql = "SELECT * "
+					+ "FROM  subject WHERE sub_id= ?";
+			stmt = con.prepareStatement(sql);
+			stmt.setString(1, sub);
+			rs = stmt.executeQuery();
+
+
+			while (rs.next()) {
+
+			Subject subject = new Subject();
+
+			subject.setSub_id(rs.getInt("sub_id"));
+			subject.setSub_name(rs.getString("sub_name"));
+			subject.setSub_group(rs.getString("sub_group"));
+			subject.setTea_id(rs.getInt("tea_id"));
+
+			//System.out.println(rs.getInt("sub_id"));
+
+			subjects.add(subject);
+			}
+
+		}catch(Exception e){
+
+			}finally{
+				try{
+					close();
+				}catch (Exception e){
+
+				}
+		}
+		return subjects;
+
+	}
+
 }

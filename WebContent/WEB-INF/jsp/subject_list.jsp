@@ -1,3 +1,4 @@
+
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -12,7 +13,7 @@
 
 
 
-<%
+<!--
   ArrayList<String> arr = request.getAttribute("subjects");
 
    int flg =111;
@@ -31,7 +32,15 @@
 
        }
    }
-%>
+-->
 
+<h3>IT</h3>
+	<c:forEach var="it" items="${IT}">
+		<tr>
+			<td><c:out value="${it.sub_name}"></c:out></td>
+			<td><input type="submit" value="削除"></td>
+		</tr>
+
+	</c:forEach>
 </body>
 </html>

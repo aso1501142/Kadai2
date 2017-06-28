@@ -20,12 +20,12 @@
 			<%= session.getAttribute("zemiName") %>
 			科目分類名:
 			<%= session.getAttribute("zemiGroup") %>
-			</p>
 			担当教師ID:
 			<%= session.getAttribute("teaId") %>
-			<a href="zemi_add.jsp" tabindex="-1">
+		<p>
+		<a href="Zemi_add_conf">
 			<input name="back" type="button"value="戻る">
-			</a>
+		</a>
 			<input type="submit" value="登録"/>
 	</form>
 

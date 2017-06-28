@@ -10,19 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Stu_login
+ * Servlet implementation class Top_zemi_add
  */
-@WebServlet("/Stu_login")
-public class Stu_login extends HttpServlet {
+@WebServlet("/Top_zemi_add")
+public class Top_zemi_add extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public Stu_login() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -30,11 +22,6 @@ public class Stu_login extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-
-		//ログイン画面に遷移
-		RequestDispatcher rd =
-				request.getRequestDispatcher("WEB-INF/jsp/stu_login.jsp");
-		rd.forward(request, response);
 	}
 
 	/**
@@ -43,5 +30,11 @@ public class Stu_login extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
+
+
+
+		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/jsp/zemi_add.jsp");
+		rd.forward(request, response);
 	}
+
 }
