@@ -11,36 +11,29 @@
 </head>
 <body>
 
+<h3>IT</h3>
+<ul>
+	<c:forEach var="it" items="${IT}">
 
+			<li><c:out value="${it.sub_name}"></c:out></li>
+	</c:forEach>
+</ul>
 
-<!--
-  ArrayList<String> arr = request.getAttribute("subjects");
+<h3>English</h3>
+<ul>
+	<c:forEach var="ing" items="${English}">
 
-   int flg =111;
+			<li><c:out value="${ing.sub_name}"></c:out></li>
+	</c:forEach>
+</ul>
 
-   for (int i=0; i<arr.size(); i++) {
-       String sbg = subject.getSub_group(i);
-
-       if(flg%10 == 1){}
-
-       if (sbg.equals("IT")) {
-           // ITの場合
-
-       } else if (sbg.equals("English")){
-
-       } else if (sbg.equals("communication")){
-
-       }
-   }
--->
 
 <h3>IT</h3>
-	<c:forEach var="it" items="${IT}">
-		<tr>
-			<td><c:out value="${it.sub_name}"></c:out></td>
-			<td><input type="submit" value="削除"></td>
-		</tr>
+<ul>
+	<c:forEach var="com" items="${communicatin}">
 
+			<li><c:out value="${com.sub_name}"></c:out></li>
 	</c:forEach>
+</ul>
 </body>
 </html>
