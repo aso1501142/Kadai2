@@ -6,18 +6,24 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>科目変更・削除</title>
+<title>課題2</title>
+<link href="css/kadai2.css" rel="stylesheet" type="text/css" charset="utf-8"/>
 </head>
-<body>
-	<h1>科目変更・削除</h1>
+<body id="managerpage">
 
+<h1 id="manahead">受講システム(管理者)</h1>
+
+<div class="center">
+<h1 id="title">ゼミ科目変更・削除</h1>
 <table border="1">
+
 		<tr>
-			<td>科目名</td>
-			<td>科目分類名</td>
-			<td></td>
-			<td></td>
+			<span style="line-height:300%"><td>科目名</td></span>
+			<span style="line-height:300%"><td>科目分類名</td></span>
+			<span style="line-height:300%"><td></td></span>
+			<span style="line-height:300%"><td></td></span>
 		</tr>
+
 	<c:forEach var="subject" items="${subjects}">
 		<tr>
 			<td><c:out value="${subject.sub_name}"></c:out></td>
@@ -29,8 +35,10 @@
 			</td>
 			<td><input type="submit" value="削除"></td>
 		</tr>
-
 	</c:forEach>
+
 </table>
+</div>
+
 </body>
 </html>

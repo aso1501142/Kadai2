@@ -12,6 +12,8 @@
 
 <h1 id="manahead">ゼミ受講システム(管理者)</h1>
 
+	<div class="center">
+
 	<div id="targe" style="color: red;">
 		<c:forEach var="error" items ="${errorMessageList}" varStatus="status">
 			<p>
@@ -21,7 +23,6 @@
 		<c:out value="${errorMessage}" />
 	</div>
 
-	<div class="center">
 	<div class="manaballoon">
 
 	<form method="post" action="Tea_login">

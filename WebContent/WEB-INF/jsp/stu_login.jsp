@@ -12,6 +12,8 @@
 
 <h1 id="stuhead">ゼミ受講システム(生徒)</h1>
 
+	<div class="center">
+
 	<div id="targe" style="color: red;">
 		<c:forEach var="error" items ="${errorMessageList}" varStatus="status">
 			<p>
@@ -21,7 +23,6 @@
 		<c:out value="${errorMessage}" />
 	</div>
 
-	<div class="center">
 	<div class="stuballoon">
 	<form method="post" action="Stu_login">
 

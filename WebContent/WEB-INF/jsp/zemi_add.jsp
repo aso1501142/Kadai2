@@ -6,9 +6,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>課題2</title>
+<link href="css/kadai2.css" rel="stylesheet" type="text/css" charset="utf-8"/>
 </head>
-<body>
+<body id="managerpage">
+
+<h1 id="manahead">ゼミ受講システム(管理者)</h1>
 
 	<div id="target" style="color: red;">
 		<c:forEach var="error" items="${errorMessageList}" varStatus="status">
@@ -19,17 +22,28 @@
 		<c:out value="${errorMess}" />
 	</div>
 
+	<div class="center">
+
+<h1 id="title">ゼミ科目登録</h1>
 
 	<form method="post" action="Zemi_add">
 
-		科目ID<input type="text" name="subId"><br>
-		科目名<input type="text" name="subName"><br>
-		科目分類<input type="text"name="subGroup"><br>
-		担当教師ID<input type="text" name="tea_Id"><br>
+		<span style="line-height:300%">科目ID</span>
+		<input type="text" name="subId" /><br/>
+		<span style="line-height:300%">科目名</span>
+		<input type="text" name="subName" /><br>
+		<span style="line-height:300%">科目分類</span>
+		<input type="text"name="subGroup" /><br>
+		<span style="line-height:300%">担当教師ID</span>
+		<input type="text" name="tea_Id" /><br>
+
 		<a href="Zemi_add">
-			<input name="back" type="button" value="戻る">
+			<input id="Manabutton" type="submit" name="back" value="戻る" />
 		</a>
-		<input type=submit value="確認画面へ">
+			<input id="Manabutton" type="submit" name="submit" value="確認画面へ" />
+
 	</form>
+	</div>
+
 </body>
 </html>

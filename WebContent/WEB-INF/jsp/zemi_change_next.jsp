@@ -5,10 +5,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>科目変更画面</title>
+<title>課題2</title>
+<link href="css/kadai2.css" rel="stylesheet" type="text/css" charset="utf-8"/>
 </head>
-<body>
-<h1>科目変更画面</h1>
+<body id="managerpage">
+<h1 id="manahead">ゼミ受講システム(管理者)</h1>
+
+	<div class="center">
+
+<h1 id="title">ゼミ科目変更</h1>
 
 <!-- <table border="1">
 		<tr>
@@ -19,14 +24,20 @@
 		</tr>
 </table> -->
 	<form method="post" action="Zemi_change_next">
-		科目ID<input type="text" name="subId" value="${subject.sub_id}"><br>
-		科目名<input type="text" name="subName" value="${subject.sub_name}"><br>
-		科目分類<input type="text"name="subGroup" value="${subject.sub_group}"><br>
-		教師ID<input type="text" name="teaId" value="${subject.tea_id}"><br>
+		<span style="line-height:300%">科目ID</span>
+		<input type="text" name="subId" value="${subject.sub_id}" /><br/>
+		<span style="line-height:300%">科目名</span>
+		<input type="text" name="subName" value="${subject.sub_name}" /><br/>
+		<span style="line-height:300%">科目分類</span>
+		<input type="text"name="subGroup" value="${subject.sub_group}" /><br/>
+		<span style="line-height:300%">教師ID</span>
+		<input type="text" name="teaId" value="${subject.tea_id}" /><br/>
 
 
-	<button type="submit" name="sub_id" value="${subject.sub_id}">確定</button>
-			</form>
+		<button type="submit" name="sub_id" value="${subject.sub_id}">確定</button>
+
+		</form>
+		</div>
 
 
 </body>

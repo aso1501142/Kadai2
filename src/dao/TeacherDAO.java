@@ -47,21 +47,16 @@ public class TeacherDAO {
 		Teacher teacher = new Teacher();
 
 		try{
+
 			connection();
-
 			String sql ="SELECT tea_id FROM teacher WHERE tea_id = ? AND tea_password = ?";
-
 			stmt = con.prepareStatement(sql);
 			stmt.setInt(1, teacherId);
 			stmt.setString(2, password);
 			rs = stmt.executeQuery();
 
-
-
 			rs.next();
 			teacher.setTeacherId(rs.getInt("tea_id"));
-
-
 
 		}catch(Exception e){
 			System.out.println(e);
@@ -75,6 +70,4 @@ public class TeacherDAO {
 		}
 		return teacher;
 	}
-
-
 }
