@@ -40,19 +40,19 @@ public class Top_sub_list extends HttpServlet {
 
 		try{
 			HttpSession session = request.getSession();
+			
 			SubjectDAO subjectDAO = new SubjectDAO();
 			ArrayList<Subject> subjects = new ArrayList<Subject>();
 			subjects = subjectDAO.getSubjectdata("IT");
-			session.setAttribute("IT", subjects);
+			session.setAttribute("it", subjects);
 
 			subjects = subjectDAO.getSubjectdata("English");
-			session.setAttribute("English", subjects);
+			session.setAttribute("eng", subjects);
 
 			subjects = subjectDAO.getSubjectdata("communication");
-			session.setAttribute("commnuication", subjects);
+			session.setAttribute("com", subjects);
 
 			path="WEB-INF/jsp/subject_list.jsp";
-
 
 
 

@@ -109,5 +109,9 @@ public class StudentDAO {
 		return seminar;
 
 	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/aso1501142/Kadai2.git
 
 }
