@@ -3,6 +3,7 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
@@ -19,11 +20,14 @@ public class SeminarDAO {
 	public Connection connection() throws Exception {
 
 		if (ds == null) {
-			ds = (DataSource) (new InitialContext()).lookup("java:comp/env/jsbc/MySQL");
+			ds = (DataSource) (new InitialContext()).lookup("java:comp/env/jdbc/MySQL");
 		}
+		con = (Connection) ds.getConnection();
+
 		return con;
 
 	}
+
 	public void close() throws Exception {
 
 		if (rs != null) {
@@ -36,11 +40,12 @@ public class SeminarDAO {
 			con.close();
 		}
 	}
-	public Seminar getSeminar(int stu_id,int sub_id){
+
+	public Seminar getSeminar(int stu_id, int sub_id) {
 
 		Seminar seminar = new Seminar();
 
-		try{
+		try {
 			connection();
 			String sql = "";
 			stmt = con.prepareStatement(sql);
@@ -52,14 +57,53 @@ public class SeminarDAO {
 			seminar.setStu_id(stu_id);
 			seminar.setSub_id(sub_id);
 
-		}catch(Exception e){
+		} catch (Exception e) {
 			seminar = null;
-		}finally{
-			try{
+		} finally {
+			try {
 				close();
-			}catch(Exception e){
+			} catch (Exception e) {
 			}
-			}
+		}
 		return seminar;
+	}
+
+	public ArrayList<Seminar> getSeminar(int sub) {
+
+		ArrayList<Seminar> seminar = new ArrayList<Seminar>();
+
+		try {
+			// DB接続
+
+			connection();
+
+			String sql = "SELECT sub_id , stu_id " + "FROM  seminar WHERE sub_id = ?";
+			stmt = con.prepareStatement(sql);
+			stmt.setInt(1, sub);
+
+			rs = stmt.executeQuery();
+
+			while (rs.next()) {
+
+				Seminar sem = new Seminar();
+
+				sem.setStu_id(rs.getInt("stu_id"));
+
+				System.out.println(rs.getInt("sub_id"));
+
+				seminar.add(sem);
+			}
+
+		} catch (Exception e) {
+
+		} finally {
+			try {
+				close();
+			} catch (Exception e) {
+
+			}
+		}
+		return seminar;
+
 	}
 }

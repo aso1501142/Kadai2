@@ -82,7 +82,6 @@ public class SubjectDAO {
 			//DB接続
 
 			connection();
-
 			//System.out.println("con");
 
 
@@ -124,7 +123,6 @@ public class SubjectDAO {
 	public Subject getSubject(int sub_Id){
 
 		Subject subject = new Subject();
-		System.out.println("dfghnm");
 
 		try{
 			connection();
@@ -226,7 +224,7 @@ public class SubjectDAO {
 
 
 			String sql = "SELECT * "
-					+ "FROM  subject WHERE sub_id= ?";
+					+ "FROM  subject WHERE sub_group= ?";
 			stmt = con.prepareStatement(sql);
 			stmt.setString(1, sub);
 			rs = stmt.executeQuery();
@@ -240,8 +238,6 @@ public class SubjectDAO {
 			subject.setSub_name(rs.getString("sub_name"));
 			subject.setSub_group(rs.getString("sub_group"));
 			subject.setTea_id(rs.getInt("tea_id"));
-
-			//System.out.println(rs.getInt("sub_id"));
 
 			subjects.add(subject);
 			}
