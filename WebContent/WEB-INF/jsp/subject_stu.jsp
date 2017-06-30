@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<form method="post" action="Subject_list">
 <ul>
 
 	<c:forEach var="stu" items="${stu}">
@@ -15,5 +16,9 @@
 	</c:forEach>
 
 </ul>
+
+<input type="submit" value="戻る">
+
+</form>
 </body>
 </html>
