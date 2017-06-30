@@ -56,7 +56,6 @@ public class StudentDAO {
 
 			rs.next();
 			student.setStu_id(stu_id);
-			student.setStu_password(password);
 
 		}catch(Exception e){
 			student = null;
@@ -69,32 +68,29 @@ public class StudentDAO {
 		}
 		return student;
 	}
-//こここここここっここここ
-	public ArrayList<Student> getStudent() {
 
-		ArrayList<Seminar> seminar = new ArrayList<Seminar>();
+
+	public ArrayList<Student> getStudent(ArrayList<Seminar> list) {
+
+		ArrayList<Student> student = new ArrayList<Student>();
+
 
 		try {
 			// DB接続
 
 			connection();
 
-			String sql = "SELECT sub_id , stu_id " + "FROM  seminar WHERE sub_id = ?";
+			for(int i = 0; i < list.size(); i++){
+
+			String sql = "SELECT stu_name FROM student WHERE stu_id = ?";
 			stmt = con.prepareStatement(sql);
-			stmt.setInt(1, sub);
+			stmt.setInt(1,list.get(i).getStu_id());
 
 			rs = stmt.executeQuery();
-
-			while (rs.next()) {
-
-				Seminar sem = new Seminar();
-
-				sem.setSub_id(rs.getInt("sub_id"));
-				sem.setStu_id(rs.getInt("stu_id"));
-
-				System.out.println(rs.getInt("sub_id"));
-
-				seminar.add(sem);
+			rs.next();
+			    Student stu = new Student();
+				stu.setStu_name(rs.getString("stu_name"));
+				student.add(stu);
 			}
 
 		} catch (Exception e) {
@@ -106,12 +102,7 @@ public class StudentDAO {
 
 			}
 		}
-		return seminar;
-
+		return student;
 	}
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/aso1501142/Kadai2.git
 
 }

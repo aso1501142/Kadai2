@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.SeminarDAO;
+import dao.StudentDAO;
 import model.Seminar;
+import model.Student;
 
 /**
  * Servlet implementation class Subject_list
@@ -31,12 +33,17 @@ public class Subject_list extends HttpServlet {
 		int sub = Integer.parseInt(request.getParameter("sub"));
 		System.out.println(sub);
 
-		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/jsp/subject_stu.jsp");
-		rd.forward(request, response);
-
 		SeminarDAO seminarDAO = new SeminarDAO();
 		ArrayList<Seminar> seminar = new ArrayList<Seminar>();
 		seminar = seminarDAO.getSeminar(sub);
+		StudentDAO studentDAO = new StudentDAO();
+		ArrayList<Student> student = new ArrayList<Student>();
+		student = studentDAO.getStudent(seminar);
+
+		request.setAttribute("stu", student);
+
+		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/jsp/subject_stu.jsp");
+		rd.forward(request, response);
 
 
 		}catch(Exception e){

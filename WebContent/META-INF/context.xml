@@ -6,7 +6,7 @@
 			name="jdbc/MySQL"
 			type="javax.sql.DataSource"
 			url="jdbc:mysql://localhost/zemi"
-			username="jsa02"
-			password="jsa02"
+			username="root"
+			password=""
 	/>
 </Context>

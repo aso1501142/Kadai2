@@ -86,11 +86,7 @@ public class SeminarDAO {
 			while (rs.next()) {
 
 				Seminar sem = new Seminar();
-
 				sem.setStu_id(rs.getInt("stu_id"));
-
-				System.out.println(rs.getInt("sub_id"));
-
 				seminar.add(sem);
 			}
 
@@ -106,4 +102,5 @@ public class SeminarDAO {
 		return seminar;
 
 	}
+
 }

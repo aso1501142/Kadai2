@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.SeminarDAO;
 import dao.StudentDAO;
+import model.Seminar;
 import model.Student;
 
 /**
@@ -63,10 +66,12 @@ public class Stu_login extends HttpServlet {
 
 			if (student != null) {
 				System.out.println("ログイン成功");
-				// session.setAttribute("CommonLoginStudent", student);
-				session.setAttribute("stu_id", stu_id);
-				session.setAttribute("stu_password", stu_password);
+				SeminarDAO seminarDAO = new SeminarDAO();
+				ArrayList<Seminar> seminar = new ArrayList<Seminar>();
 
+				seminar = seminarDAO.getSeminar(stu_id);
+
+				session.setAttribute("stu_id", student);
 				path = ("WEB-INF/jsp/my_page.jsp");
 
 			} else {

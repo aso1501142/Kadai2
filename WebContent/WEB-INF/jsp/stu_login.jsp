@@ -22,13 +22,13 @@
 		</c:forEach>
 		<c:out value="${errorMessage}" />
 	</div>
-
-	<div class="stuballoon">
 	<form method="post" action="Stu_login">
+	<div class="stuballoon">
+
 
 	<table>
 
-		<label>ID</label><br/>
+		<label>ID</label></br>
 		<input type="text" name="stu_id"/>
 		<br/><br/>
 
