@@ -6,29 +6,34 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link href="css/kadai2.css" rel="stylesheet" type="text/css" charset="utf-8"/>
 </head>
-<body>
+<body id="managerpage">
+<h1 id="manahead">ゼミ受講システム(管理者)</h1>
+<div class="center">
+<h1 id="title">ゼミ科目確認</h1>
 
 	<form method="post" action="Zemi_add_conf">
-
-		<h1>登録科目確認</h1>
-
 		<p>
-			科目ID:
-			<%= session.getAttribute("zemiId") %>
-			科目名:
-			<%= session.getAttribute("zemiName") %>
-			科目分類名:
-			<%= session.getAttribute("zemiGroup") %>
-			担当教師ID:
-			<%= session.getAttribute("teaId") %>
+			<span style="line-height:300%">科目ID:<%= session.getAttribute("zemiId") %></span>
+			<input name="Text1" type="text" /><br/>
+
+			<span style="line-height:300%">科目名:<%= session.getAttribute("zemiName") %></span>
+			<input name="Text1" type="text" /><br/>
+
+			<span style="line-height:300%">科目分類名:<%= session.getAttribute("zemiGroup") %></span>
+			<input name="Text1" type="text" /><br/>
+
+			<span style="line-height:300%">担当教師ID:<%= session.getAttribute("teaId") %></span>
+			<input name="Text1" type="text" /><br/>
+
 		<p>
 		<a href="Zemi_add_conf">
-			<input name="back" type="button"value="戻る">
+			<input id="Manabutton" name="back" type="button"value="戻る">
 		</a>
-			<input type="submit" value="登録"/>
+			<input id="Manabutton" type="submit" value="登録"/>
 	</form>
-
+</div>
 
 
 </body>
